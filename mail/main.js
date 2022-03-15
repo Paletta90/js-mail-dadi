@@ -15,17 +15,33 @@ let container = document.getElementById("container");
 verifica.addEventListener('click',
     function () {
 
-        for (i = 0; i <= (listMail.length - 1); i++) {
+        // Utilizzo il break per uscire dal ciclo
+        // for (i = 0; i < listMail.length; i++) {
 
-            //Controllo se la mail inserita è presente nell'array. Se si blocco il ciclo
+        //     //Controllo se la mail inserita è presente nell'array. Se si blocco il ciclo
+        //     if (userMail.value == listMail[i]) {
+        //         container.innerHTML = `L'email inserita (${userMail.value}) è presente`;
+        //         break;
+        //     // Se arrivo al controllo dell'ultima posizione senza trovare la mail inserita stampo email non trovata
+        //     } else if (i == (listMail.length - 1)) {
+        //         container.innerHTML = `L'email inserita (${userMail.value}) non è presente`;
+        //     }
+
+        // }
+
+        // Utilizzo metodo con variabile booleana
+        let testMail = false;
+
+        for (i = 0; i < listMail.length; i++) {
             if (userMail.value == listMail[i]) {
-                container.innerHTML = `L'email inserita (${userMail.value}) è presente`;
-                break;
-            // Se arrivo al controllo dell'ultima posizione senza trovare la mail inserita stampo email non trovata
-            } else if (i == (listMail.length - 1)) {
-                container.innerHTML = `L'email inserita (${userMail.value}) non è presente`;
+                testMail = true;
             }
+        }
 
+        if (testMail == true) {
+            container.innerHTML = `L'email inserita (${userMail.value}) è presente`;
+        } else {
+            container.innerHTML = `L'email inserita (${userMail.value}) non è presente`;
         }
     }
 )
