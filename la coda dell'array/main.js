@@ -46,7 +46,7 @@ let numExtract = Number(prompt("Inserire quanti elementi si voglio estrarre dal 
 // Controllo se il numero di elementi da estrarre non sia maggiore degli elementi stessi
 if (numExtract <= numElement) {
 
-    if( numElement == 1){
+    if( numExtract == 1){
         container.innerHTML += `<div>Stampo l'utlimo numero dell'array: </div>`
     }else{
         container.innerHTML += `<div>Stampo gli ultimi ${numExtract} numeri dell'array:</div>`
